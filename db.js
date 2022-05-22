@@ -7,6 +7,6 @@ export async function connectToDb() {
     console.log('DB connect!')
   }
   catch{
-    console.log('Error')
+    console.log('Error DB')
   }
 }
