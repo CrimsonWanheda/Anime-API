@@ -10,13 +10,13 @@ router.get('/animes/:id', getAnime);
 
 router.post('/animes', fileUpload({
     useTempFiles : true,
-    tempFileDir : '../upload'
+    tempFileDir : './upload'
 }), createAnime);
 //Esto es para que solo funcione este metodo en este metodo http
 
 router.put('/animes/:id', fileUpload({
     useTempFiles : true,
-    tempFileDir : '../upload'
+    tempFileDir : './upload'
 }), editAnime);
 
 router.delete('/animes/:id', deleteAnime);
