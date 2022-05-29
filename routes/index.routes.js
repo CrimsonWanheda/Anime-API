@@ -1,9 +1,11 @@
 import { Router } from 'express';
+import fs from 'fs';
 
 const router = Router();
 
 router.get('/', (req, res)=>{
-  res.send("API ANIME :)");
+  res.render("main")
+  
 })
 
 export default router;
