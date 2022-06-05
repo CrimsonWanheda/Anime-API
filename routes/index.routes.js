@@ -4,7 +4,7 @@ import fs from 'fs';
 const router = Router();
 
 router.get('/', (req, res)=>{
-  res.render("main")
+  res.render("index");
   
 })
 

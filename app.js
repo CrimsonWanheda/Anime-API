@@ -20,7 +20,8 @@ app.use(express.json());
 
 //Settings
 app.set('views', path.join(__dirname, 'views'));
-app.engine('.hbs', 
+app.engine(
+    '.hbs', 
     create({
         defaultLayout: 'main',
         layoutsDir: path.join(app.get('views'), 'layouts'),
@@ -41,5 +42,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 //Routes
 app.use(indexRoutes);
 app.use('/api',animesRoutes);
+
+//Page error 404
+app.use(function(req, res) {
+    res.status(400);
+    res.render("404")
+});
+
+app.use(function(error, req, res, next) {
+    res.status(500);
+    res.send(`Server ${error}`);
+});
 
 export default app;
