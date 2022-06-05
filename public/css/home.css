@@ -11,7 +11,11 @@ header{
     color: white;
     font-family:'Courier New', Courier, monospace;
     padding: 10px;
+<<<<<<< HEAD
     width: auto;
+=======
+    width: 100%;
+>>>>>>> 5585b073b9cd802f93f5e9f695996507261980ee
 }
 header a b{color: #da0202;}
 
