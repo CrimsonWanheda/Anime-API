@@ -20,12 +20,8 @@ app.use(express.json());
 
 //Settings
 app.set('views', path.join(__dirname, 'views'));
-<<<<<<< HEAD
 app.engine(
-    '.hbs', 
-=======
-app.engine('.hbs', 
->>>>>>> 5585b073b9cd802f93f5e9f695996507261980ee
+    '.hbs',
     create({
         defaultLayout: 'main',
         layoutsDir: path.join(app.get('views'), 'layouts'),
