@@ -5,7 +5,8 @@ import { uploadImage, deleteImage } from '../utils/cloudinary.js'
 export const getAnimes = async (req, res)=>{
   try{
       const animes = await Anime.find();
-      res.json(animes)
+      const count = await Anime.collection.count();
+      res.json({"count": count, animes})
   } catch (error){
       return res.status(500).json({"message": error.message})
   }
@@ -13,8 +14,9 @@ export const getAnimes = async (req, res)=>{
 
 export const getAnime = async (req, res)=>{
   try{
-      const anime = await Anime.findById(req.params.id);
-      res.json(anime)  
+      const anime = await Anime.findOne({slug: req.params.id});
+      res.json(anime)
+      
   } catch(error){
       return res.status(500).json({"message": error.message})
   }
